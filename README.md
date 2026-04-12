@@ -25,4 +25,5 @@ Collection of mini python systems and projects to practice core programming with
 - Match-case
 - Try-except
 - Input Validation
+  
 and many more projects are on the way like mini systems(coming soon).
