@@ -10,6 +10,20 @@ def get_name():
             continue
     return name.title()
 
+def validate_book():
+    while True:
+        try:
+            b_id = int(input("Enter the book id:"))
+            if b_id in book:
+                break
+            else:
+                print("There is no book with mentioned id")
+        except ValueError:
+            print("Invalid input please enter a valid input")
+            continue
+    return b_id
+            
+
 def get_id():
     while True:
         try:

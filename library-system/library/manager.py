@@ -1,6 +1,6 @@
 from library.data import book, user
-from library.book import get_id, get_aname, get_name, get_quantity
-from library.user import get_user_name, get_user_id
+from library.book import get_id, get_aname, get_name, get_quantity, validate_book
+from library.user import get_user_name, get_user_id, validate_user
 def addbook():
     b_id = get_id()
     name = get_name()
@@ -63,9 +63,9 @@ def modify_user():
 
 
 def borrowbook():
-    u_id = get_user_id()
+    u_id = validate_user()
     if u_id in user:
-        book_id = get_id()
+        book_id = validate_book()
         if book_id in book:
             if book[book_id]["availability"] > 0:
                 book[book_id]["availability"]-=1
@@ -84,11 +84,11 @@ def borrowbook():
         print('Invalid user')
 
 def returnbook():
-    u_id = get_user_id()
+    u_id = validate_user()
 
     if u_id in user:
 
-        book_id = get_id()
+        book_id = validate_book()
 
         if user[u_id]["Books_borrowed"] and book_id in user[u_id]["Books_borrowed"]:
 
