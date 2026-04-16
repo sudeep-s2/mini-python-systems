@@ -8,7 +8,7 @@ def addbook():
     quantity = get_quantity()
     available = quantity
     book[b_id] = {"name": name.title(), "author name": a_name.title(), 
-                  "quantity": quantity, "availability": available, "Borrowed by": None}
+                  "quantity": quantity, "availability": available, "Borrowed by": {}}
     print("Book added successfully")
 def displayall():
     for items, info in book.items():
